@@ -20,3 +20,10 @@ export const fonts = [
   'Rubik',
   'Inter'
 ];
+
+export const weights = [
+  '100',
+  '400',
+  '700',
+  '900'
+];

@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import '../styles/globals.css';
 
-import { fonts } from '../data/fonts';
+import { fonts, weights } from '../data/fonts';
 
 const title = "LogoMe";
 const description = "A quick and easy logo generator.";
@@ -19,7 +19,7 @@ export default function App(props) {
         {
           fonts.map(font =>
             <link
-              href={`https://fonts.googleapis.com/css2?family=${font.replace(/\s/g, '+')}&display=swap`}
+              href={`https://fonts.googleapis.com/css2?family=${font.replace(/\s/g, '+')}:wght@${weights.join(';')}&display=swap`}
               rel="stylesheet"
               key={font}
             />
