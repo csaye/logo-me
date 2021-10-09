@@ -16,6 +16,22 @@ export default function Index() {
   const [font, setFont] = useState('Roboto');
   const [weight, setWeight] = useState('400');
 
+  // draws canvas
+  function drawCanvas() {
+    // clear canvas
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, width, height);
+    // draw text
+    ctx.font = `48px ${font}`;
+    ctx.fillStyle = 'black';
+    ctx.fillText(title, 0, 48);
+  }
+
+  // draw canvas on update
+  useEffect(() => {
+    if (ctx) drawCanvas();
+  }, [title, font]);
+
   // get canvas context on start
   useEffect(() => {
     canvas = canvasRef.current;
