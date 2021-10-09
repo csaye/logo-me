@@ -39,32 +39,34 @@ export default function Index() {
   }, []);
 
   return (
-    <div>
-      <h1>LogoMe</h1>
-      <canvas
-        ref={canvasRef}
-        width={width}
-        height={height}
-      />
-      <input
-        placeholder="title"
-        value={title}
-        onChange={e => setTitle(e.target.value)}
-      />
-      <select value={font} onChange={e => setFont(e.target.value)}>
-        {
-          fonts.map(font =>
-            <option value={font} key={font}>{font}</option>
-          )
-        }
-      </select>
-      <select value={weight} onChange={e => setWeight(e.target.value)}>
-        {
-          weights.map(weight =>
-            <option value={weight} key={weight}>{weight}</option>
-          )
-        }
-      </select>
+    <div className={styles.container}>
+      <div className={styles.center}>
+        <h1>LogoMe</h1>
+        <canvas
+          ref={canvasRef}
+          width={width}
+          height={height}
+        />
+        <input
+          placeholder="title"
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+        />
+        <select value={font} onChange={e => setFont(e.target.value)}>
+          {
+            fonts.map(font =>
+              <option value={font} key={font}>{font}</option>
+            )
+          }
+        </select>
+        <select value={weight} onChange={e => setWeight(e.target.value)}>
+          {
+            weights.map(weight =>
+              <option value={weight} key={weight}>{weight}</option>
+            )
+          }
+        </select>
+      </div>
     </div>
   );
 }
